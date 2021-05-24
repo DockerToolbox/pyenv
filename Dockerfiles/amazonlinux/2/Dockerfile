@@ -5,7 +5,7 @@ RUN yum makecache && \
 	yum install -y \ 
 		bzip2-devel-1.0.6 \ 
 		gcc-7.3.1 \ 
-		git-2.23.3 \ 
+		git-2.23.4 \ 
 		libffi-devel-3.0.13 \ 
 		make-3.82 \ 
 		openssl-devel-1.0.2k \ 

@@ -4,7 +4,7 @@ FROM debian:stretch-slim
 RUN apt-get update && \ 
 	apt-get -y --no-install-recommends install \ 
 		build-essential=12.3 \ 
-		ca-certificates=20200601~deb9u1 \ 
+		ca-certificates=20200601~deb9u2 \ 
 		git=1:2.11.0-3+deb9u7 \ 
 		libbz2-dev=1.0.6-8.1 \ 
 		libffi-dev=3.2.1-6 \ 

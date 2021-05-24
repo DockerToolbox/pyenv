@@ -5,9 +5,9 @@ RUN apk update && \
 	apk add --no-cache \ 
 		bash=5.0.17-r0 \ 
 		bzip2-dev=1.0.8-r1 \ 
-		git=2.26.2-r0 \ 
+		git=2.26.3-r0 \ 
 		libffi-dev=3.3-r2 \ 
-		openssl-dev=1.1.1j-r0 \ 
+		openssl-dev=1.1.1k-r0 \ 
 		readline-dev=8.0.4-r0 \ 
 		sqlite-dev=3.32.1-r0 \ 
 		zlib-dev=1.2.11-r3 \

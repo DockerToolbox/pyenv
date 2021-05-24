@@ -100,17 +100,8 @@ matrix:
     script:
     - "./hadolint/scan.sh"
   - language: ruby
-    name: Github Linguist (rvm 2.7)
-    rvm: 2.7
-    before_install:
-    - git clone https://github.com/TravisToolbox/github-linguist
-    install:
-    - "./github-linguist/install.sh"
-    script:
-    - "./github-linguist/scan.sh"
-  - language: ruby
-    name: YAML Linting (rvm 2.7)
-    rvm: 2.7
+    name: YAML Linting (rvm 3.0)
+    rvm: 3.0
     before_install:
     - git clone https://github.com/TravisToolbox/yaml-lint
     install:
@@ -128,8 +119,8 @@ matrix:
     script:
     - "./shellcheck/scan.sh"
   - language: ruby
-    name: Link Checking (rvm 2.7)
-    rvm: 2.7
+    name: Link Checking (rvm 3.0)
+    rvm: 3.0
     env:
     - WHITELIST="https://img.shields.io"
     - EXCLUDE_FILES="CHANGELOG.md"

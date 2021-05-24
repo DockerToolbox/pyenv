@@ -10,7 +10,7 @@ RUN apt-get update && \
 		libffi-dev=3.2.1-9 \ 
 		libreadline-dev=7.0-5 \ 
 		libsqlite3-dev=3.27.2-3+deb10u1 \ 
-		libssl-dev=1.1.1d-0+deb10u5 \ 
+		libssl-dev=1.1.1d-0+deb10u6 \ 
 		wget=1.20.1-1.1 \ 
 		zlib1g-dev=1:1.2.11.dfsg-1 \
 		&& \
