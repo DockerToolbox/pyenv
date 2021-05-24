@@ -4,92 +4,92 @@ matrix:
     - docker
     name: Docker Version
     script:
-      - docker --version
+    - docker --version
   - services:
     - docker
     name: Alpine Linux 3.10
     script:
-      - ./Dockerfiles/alpine/3.10/manage.sh build clean
+    - "./Dockerfiles/alpine/3.10/manage.sh build clean"
   - services:
     - docker
     name: Alpine Linux 3.11
     script:
-      - ./Dockerfiles/alpine/3.11/manage.sh build clean
+    - "./Dockerfiles/alpine/3.11/manage.sh build clean"
   - services:
     - docker
     name: Alpine Linux 3.12
     script:
-      - ./Dockerfiles/alpine/3.12/manage.sh build clean
+    - "./Dockerfiles/alpine/3.12/manage.sh build clean"
   - services:
     - docker
     name: Alpine Linux 3.13
     script:
-      - ./Dockerfiles/alpine/3.13/manage.sh build clean
+    - "./Dockerfiles/alpine/3.13/manage.sh build clean"
   - services:
     - docker
     name: Amazon Linux 1
     script:
-      - ./Dockerfiles/amazonlinux/1/manage.sh build clean
+    - "./Dockerfiles/amazonlinux/1/manage.sh build clean"
   - services:
     - docker
     name: Amazon Linux 2
     script:
-      - ./Dockerfiles/amazonlinux/2/manage.sh build clean
+    - "./Dockerfiles/amazonlinux/2/manage.sh build clean"
   - services:
     - docker
     name: Centos 7
     script:
-      - ./Dockerfiles/centos/7/manage.sh build clean
+    - "./Dockerfiles/centos/7/manage.sh build clean"
   - services:
     - docker
     name: Centos 8
     script:
-      - ./Dockerfiles/centos/8/manage.sh build clean
+    - "./Dockerfiles/centos/8/manage.sh build clean"
   - services:
     - docker
     name: Debian 9 (Stretch)
     script:
-      - ./Dockerfiles/debian/9/manage.sh build clean
+    - "./Dockerfiles/debian/9/manage.sh build clean"
   - services:
     - docker
     name: Debian 9 (Stretch Slim)
     script:
-      - ./Dockerfiles/debian/9-slim/manage.sh build clean
+    - "./Dockerfiles/debian/9-slim/manage.sh build clean"
   - services:
     - docker
     name: Debian 10 (Buster)
     script:
-      - ./Dockerfiles/debian/10/manage.sh build clean
+    - "./Dockerfiles/debian/10/manage.sh build clean"
   - services:
     - docker
     name: Debian 10 (Buster Slim)
     script:
-      - ./Dockerfiles/debian/10-slim/manage.sh build clean
+    - "./Dockerfiles/debian/10-slim/manage.sh build clean"
   - services:
     - docker
     name: Debian 11 (Bullseye)
     script:
-      - ./Dockerfiles/debian/11/manage.sh build clean
+    - "./Dockerfiles/debian/11/manage.sh build clean"
   - services:
     - docker
     name: Debian 11 (Bullseye Slim)
     script:
-      - ./Dockerfiles/debian/11-slim/manage.sh build clean
+    - "./Dockerfiles/debian/11-slim/manage.sh build clean"
   - services:
     - docker
     name: Ubuntu 16.04 (Xenial Xerus / Xenial)
     script:
-      - ./Dockerfiles/ubuntu/16.04/manage.sh build clean
+    - "./Dockerfiles/ubuntu/16.04/manage.sh build clean"
   - services:
     - docker
     name: Ubuntu 18.04 (Bionic Beaver / Bionic)
     script:
-      - ./Dockerfiles/ubuntu/18.04/manage.sh build clean
+    - "./Dockerfiles/ubuntu/18.04/manage.sh build clean"
   - services:
     - docker
     name: Ubuntu 20.04 (Focal Fossa / Focal)
     script:
-      - ./Dockerfiles/ubuntu/20.04/manage.sh build clean
+    - "./Dockerfiles/ubuntu/20.04/manage.sh build clean"
   - services:
     - docker
     name: Dockerfile Linting (Hadolint)
@@ -133,4 +133,4 @@ matrix:
 notifications:
   email: false
   slack:
-    secure: bF31VZEUbYmzt+sVvYScOdl2tQ6LCfEaTXCwFJmiMOYsa7P/PZOlaFbanhNfrMmQ9Eqw57/1lGNAkHZsBBGXeQox3rTql68r1mOo83m5+PgGbNV6xDAZyBr7PLOxZN6pTY/RwXb6gwlZHJsPDRYH5K97CKjr7yE8XPqACI+myPLFcka9DNbmikfeYhwIxkaabiPfNVTLluiJDnPTk4DQxN4iSFCKHUKFQnxcxVHGqSXn0ObZ53Z8R1C77wUaRw0FBNRDM13glY0dqDAUf2R6qtSJQe/t8Y8y1pefKHXPNSmNE6aYXQJOfJRFUbIyqnjUvkT4tlt+Hoxf37FCiMh8bUxkhoBuhYp+cPQ+A9/oVRt9LlyA3rh40QE7FcoSEJMQHSvBvozWF3aaqQ+dcxkm5YolqFfQSPlOTH3s7/vaDKUdr3qXp59whoONubL3OZI+F3OTsASUP/CX144W7E5v9vLcJWQJpx5wy3hcCg0ZQ0iOmI/nXu5s8kUnkm/L5ZPCdLHwXmIcDt/XveFYTcFaS50wJxCEZP/FDrMfYeJPfHzunUBGNkSp7ZhZVY7wrjd+HkFkt+/2Ifubs96eRzcyWeZXav2h1FvmwKQ1MnG7Ket3yFyTN/eu9ZIU9GD4pBlHVTngjRaSw3+SEdq5by0jXJmYtckj2RdVlzgdxbtW1TA=
+    secure: qGWf1vy5SYEPFN1Vm+Kobi+aJukEeQE2gG8uk8IZ53lT7zCUayyQx3vb0rUMupJydE3l0def4r0dCbsZ4So1md1GN6ctmlxth5k/A9HLBgvLUo8jeupnHkAUVXohJEoZZrjXSVoGxOmpfsVJGbhgLbyV4KD5dawVPGyWwRYacgBnd461CpT9OVW1kINYYroMvjBW1b8BOgEtrVTpY+IolJJ68aG6/iZJeCzCbrKS6ODTA8sQpO8eEppiCl+Llx9nrib+OZzO4zXgYqhHYKUH6XuAf3WNkX00CwlxJtUEFKkRHgqNsW2y2ZrNJSWw+9s2w+jImoX1X1upOdCHBQAj04xleZ1gSX4nloAZpu45uRe1gR4+kRW6FTn45i/3GuuJ6aJyMZTEUSnNVVP7jFDLIlFEeGHgHtaXujx6hSc9a7HY1dzgOu+hC4pVqxw/vKlSPMvqHYhJTSUOP4qr9z3LjBOGZGfsOZAAVEuD4OgJiBQ8E7VYf3uCxThOAjXKvwCm/qJnQm3wIXY3MaYP2ds6MEAIwcpOlMLplelBp50ic8GfNuDPd/zVgh5i57uklFDfnBmhAqfm9ba7nqCXPYcZHsVDL7v8uQGoo0oWsIIqSAUZrUphF/le938RUWgVLlSeDrDPmMewdJyzlJzFVmgjYlO4KJ+HlZN8BO6HPjuzIE8=
