@@ -19,10 +19,39 @@ function setup()
     LOCAL_CONTAINER_NAME="${CONTAINER_TMP//.}"
     PUBLISHED_CONTAINER_NAME="${DOCKER_HUB_ORG}/${CONTAINER_PREFIX}-${CONTAINER_OS_NAME}"
 
+    if [[ "${CONTAINER_OS_NAME}" == "debian" ]]; then
+        case "${CONTAINER_OS_VERSION_RAW}" in
+            9)
+                CONTAINER_OS_VERSION_ALT="stretch"
+                ;;
+            9-slim)
+                CONTAINER_OS_VERSION_ALT="stretch-slim"
+                ;;
+            10)
+                CONTAINER_OS_VERSION_ALT="buster"
+                ;;
+            10-slim)
+                CONTAINER_OS_VERSION_ALT="buster-slim"
+                ;;
+            11)
+                CONTAINER_OS_VERSION_ALT="bullseye"
+                ;;
+            11-slim)
+                CONTAINER_OS_VERSION_ALT="bullseye-slim"
+                ;;
+            *)
+                echo "${fgRed}${bold}Unknown debian version ${CONTAINER_OS_VERSION_RAW} aborting${reset}"
+                exit
+        esac
+    else
+        CONTAINER_OS_VERSION_ALT=$CONTAINER_OS_VERSION_RAW
+    fi
+
     export PUBLISHED_CONTAINER_NAME
     export LOCAL_CONTAINER_NAME
     export CONTAINER_OS_VERSION_RAW
     export CONTAINER_OS_VERSION
+    export CONTAINER_OS_VERSION_ALT
 }
 
 function manage_container()
@@ -31,11 +60,20 @@ function manage_container()
     clean="${2:-}"
     tags="${3:-}"
 
-    if [[ "${type}" != "publish" ]]; then
-        build_container "${clean}"
-    else
-        publish_container "${tags}"
-    fi
+    case "${type}" in
+        generate)
+            generate_container
+            ;;
+        build)
+            build_container "${clean}"
+            ;;
+        publish)
+            publish_container "${tags}"
+            ;;
+        *)
+            echo "${fgRed}${bold}Unknown option ${type} aborting${reset}"
+            ;;
+    esac
 }
 
 function set_colours()
@@ -47,6 +85,65 @@ function set_colours()
 
     bold=$(tput bold)
     reset=$(tput sgr0)
+}
+
+function check_template()
+{
+    if [[ ! -f "${1}" ]]; then
+        echo "${fgRed}${bold}${1} is missing aborting Dockerfile generation for ${CONTAINER_OS_NAME}:${CONTAINER_OS_VERSION_ALT}${reset}"
+        exit 1
+    fi
+}
+
+function generate_container()
+{
+    echo "${fgGreen}${bold}Generating new Dockerfile for ${CONTAINER_OS_NAME}:${CONTAINER_OS_VERSION_ALT}${reset}"
+
+    check_template "Templates/install.tpl"
+    check_template "Templates/cleanup.tpl"
+    check_template "Templates/entrypoint.tpl"
+
+    INSTALL=$(<Templates/install.tpl)
+    CLEANUP=$(<Templates/cleanup.tpl)
+    ENTRYPOINT=$(<Templates/entrypoint.tpl)
+
+    REPO_ROOT=$(r=$(git rev-parse --git-dir) && r=$(cd "$r" && pwd)/ && cd "${r%%/.git/*}" && pwd)
+
+    if [[ "${CONTAINER_OS_NAME}" == "alpine" ]]; then
+        CONTAINER_SHELL="ash"
+        CONTAINER_LINT="# hadolint ignore=SC2016,DL3018,DL4006"
+    else
+        CONTAINER_SHELL="bash"
+        CONTAINER_LINT="# hadolint ignore=SC2016"
+    fi
+
+    if [[ "${CONTAINER_OS_NAME}" == "alpine" ]]; then
+        CONTAINER_SHELL="ash"
+    else
+        CONTAINER_SHELL="bash"
+    fi
+
+    PACKAGES=$(get-versions -p -c "${REPO_ROOT}/Packages/packages.cfg" -o "${CONTAINER_OS_NAME}" -t "${CONTAINER_OS_VERSION_ALT}" -s "${CONTAINER_SHELL}")
+    if [[ -f "Templates/static-packages.tpl" ]]; then
+        STATIC=$(<Templates/static-packages.tpl)
+        PACKAGES=$(printf "%s\n%s" "${PACKAGES}" "${STATIC}")
+    fi
+
+    cp Dockerfile Dockerfile.bak
+
+    cat >Dockerfile <<EOL
+FROM ${CONTAINER_OS_NAME}:${CONTAINER_OS_VERSION_ALT}
+
+${CONTAINER_LINT}
+${PACKAGES}
+${INSTALL}
+${CLEANUP}
+
+${ENTRYPOINT}
+
+EOL
+
+    echo "${fgGreen}${bold}Complete${reset}"
 }
 
 function build_container()
@@ -104,5 +201,5 @@ function publish_container()
     echo "${fgGreen}${bold}Publish Complete: ${LOCAL_CONTAINER_NAME}${reset}"
 }
 
-setup
 set_colours
+setup
