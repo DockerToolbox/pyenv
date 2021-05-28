@@ -18,8 +18,9 @@ RUN apk update && \
 		linux-headers \
 		&& \
 	git clone https://github.com/pyenv/pyenv.git ~/.pyenv && \
-	echo 'export PATH="${HOME}/.pyenv/shims:${HOME}/.pyenv/bin:${PATH}"' >> ~/.bashrc && \
-	echo 'eval "$(pyenv init -)"' >> ~/.bashrc && \
+        echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc && \
+	echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc && \
+	echo 'eval "$(pyenv init --path)"' >> ~/.bashrc && \
 	apk del git && \
 	rm -rf /var/cache/apk/*
 

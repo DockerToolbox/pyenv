@@ -16,8 +16,9 @@ RUN yum makecache && \
 		zlib-devel-1.2.11 \
 		&& \
 	git clone https://github.com/pyenv/pyenv.git ~/.pyenv && \
-	echo 'export PATH="${HOME}/.pyenv/shims:${HOME}/.pyenv/bin:${PATH}"' >> ~/.bashrc && \
-	echo 'eval "$(pyenv init -)"' >> ~/.bashrc && \
+        echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc && \
+	echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc && \
+	echo 'eval "$(pyenv init --path)"' >> ~/.bashrc && \
 	yum remove -y \
 		git \
 		&& \
