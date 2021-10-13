@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DockerToolbox/pyenv/compare/v0.1.2...HEAD)
 
-- workaround [`[head]`](https://github.com/DockerToolbox/pyenv/commit/)
+- update [`[head]`](https://github.com/DockerToolbox/pyenv/commit/)
+
+- workaround [`[a6d1cc1]`](https://github.com/DockerToolbox/pyenv/commit/a6d1cc14c59af4241231a240b2fa32002f20a57b)
 
 - workaround [`[095d43f]`](https://github.com/DockerToolbox/pyenv/commit/095d43f27ab5c7982e2aa04f03a32104134bf002)
 
