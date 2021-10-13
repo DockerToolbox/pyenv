@@ -82,7 +82,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ '16.04', '18.04', '20.04' ]
+        version: [ '14.04', '16.04', '18.04', '20.04' ]
     name: Build on Ubuntu ${{ matrix.version }}
     steps:
       - uses: actions/checkout@v2

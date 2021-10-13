@@ -39,10 +39,10 @@ We try to offer as many operating system flavours as possible, but we only use c
 
 | Dockerfile | Docker Hub Repo | Docker Hub Tags |
 | --- | --- | --- |
-| [Alpine Linux 3.10](Dockerfiles/alpine/3.10/Dockerfile)             | [wolfsoftwareltd/pyenv-alpine](https://hub.docker.com/r/wolfsoftwareltd/pyenv-alpine)           | 3.10                        |
 | [Alpine Linux 3.11](Dockerfiles/alpine/3.11/Dockerfile)             | [wolfsoftwareltd/pyenv-alpine](https://hub.docker.com/r/wolfsoftwareltd/pyenv-alpine)           | 3.11                        |
 | [Alpine Linux 3.12](Dockerfiles/alpine/3.12/Dockerfile)             | [wolfsoftwareltd/pyenv-alpine](https://hub.docker.com/r/wolfsoftwareltd/pyenv-alpine)           | 3.12                        |
-| [Alpine Linux 3.13](Dockerfiles/alpine/3.13/Dockerfile)             | [wolfsoftwareltd/pyenv-alpine](https://hub.docker.com/r/wolfsoftwareltd/pyenv-alpine)           | 3.13, latest                |
+| [Alpine Linux 3.13](Dockerfiles/alpine/3.13/Dockerfile)             | [wolfsoftwareltd/pyenv-alpine](https://hub.docker.com/r/wolfsoftwareltd/pyenv-alpine)           | 3.13                        |
+| [Alpine Linux 3.14](Dockerfiles/alpine/3.14/Dockerfile)             | [wolfsoftwareltd/pyenv-alpine](https://hub.docker.com/r/wolfsoftwareltd/pyenv-alpine)           | 3.14, latest                |
 | [Amazon Linux 1](Dockerfiles/amazonlinux/1/Dockerfile)              | [wolfsoftwareltd/pyenv-amazonlinux](https://hub.docker.com/r/wolfsoftwareltd/pyenv-amazonlinux) | 1                           |
 | [Amazon Linux 2](Dockerfiles/amazonlinux/2/Dockerfile)              | [wolfsoftwareltd/pyenv-amazonlinux](https://hub.docker.com/r/wolfsoftwareltd/pyenv-amazonlinux) | 2, latest                   |
 | [Centos 7](Dockerfiles/centos/7/Dockerfile)                         | [wolfsoftwareltd/pyenv-centos](https://hub.docker.com/r/wolfsoftwareltd/pyenv-centos)           | 7,                          |
@@ -53,6 +53,7 @@ We try to offer as many operating system flavours as possible, but we only use c
 | [Debian 10 (Buster Slim)](Dockerfiles/debian/10-slim/Dockerfile)    | [wolfsoftwareltd/pyenv-debian](https://hub.docker.com/r/wolfsoftwareltd/pyenv-debian)           | 10-slim, buster-slim        |
 | [Debian 11 (Bullseye)](Dockerfiles/debian/11/Dockerfile)            | [wolfsoftwareltd/pyenv-centos](https://hub.docker.com/r/wolfsoftwareltd/pyenv-centos)           | 11, bullseye, latest        |
 | [Debian 11 (Bullseye Slim)](Dockerfiles/debian/11-slim/Dockerfile)  | [wolfsoftwareltd/pyenv-debian](https://hub.docker.com/r/wolfsoftwareltd/pyenv-debian)           | 11-slim, bullseye-slim      |
+| [Ubuntu 14.04 (Trusty Tahr)](Dockerfiles/ubuntu/14.04/Dockerfile)   | [wolfsoftwareltd/pyenv-ubuntu](https://hub.docker.com/r/wolfsoftwareltd/pyenv-ubuntu)           | 14.04, trusty               |
 | [Ubuntu 16.04 (Xenial Xerus)](Dockerfiles/ubuntu/16.04/Dockerfile)  | [wolfsoftwareltd/pyenv-ubuntu](https://hub.docker.com/r/wolfsoftwareltd/pyenv-ubuntu)           | 16.04, xenial               |
 | [Ubuntu 18.04 (Bionic Beaver)](Dockerfiles/ubuntu/18.04/Dockerfile) | [wolfsoftwareltd/pyenv-ubuntu](https://hub.docker.com/r/wolfsoftwareltd/pyenv-ubuntu)           | 18.04, bionic               |
 | [Ubuntu 20.04 (Focal Fossa)](Dockerfiles/ubuntu/20.04/Dockerfile)   | [wolfsoftwareltd/pyenv-ubuntu](https://hub.docker.com/r/wolfsoftwareltd/pyenv-ubuntu)           | 20.04, focal, latest        |
