@@ -90,6 +90,14 @@ This can be done from any level of the directory tree and is recursive.
 ./manange-all.sh build [clean]
 ```
 
+### Scan Containers
+
+This can be done from any level of the directory tree and is recursive.
+
+```
+./manange-all.sh scan         
+```
+
 ### Publish Containers
 
 This can be done from any level of the directory tree and is recursive.
