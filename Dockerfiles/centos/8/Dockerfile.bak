@@ -4,7 +4,7 @@ FROM centos:8
 RUN yum makecache && \
 	yum install -y \
 		bzip2-devel-1.0.6 \
-		gcc-8.4.1 \
+		gcc-8.3.1 \
 		git-2.27.0 \
 		libffi-devel-3.1 \
 		make-4.2.1 \

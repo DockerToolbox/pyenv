@@ -67,6 +67,9 @@ function manage_container()
         build)
             build_container "${clean}"
             ;;
+        scan)
+            scan_container
+            ;;
         publish)
             publish_container "${tags}"
             ;;
@@ -78,6 +81,7 @@ function manage_container()
 
 function set_colours()
 {
+    export TERM=xterm
     fgRed=$(tput setaf 1)
     fgGreen=$(tput setaf 2)
     fgYellow=$(tput setaf 3)
@@ -117,20 +121,17 @@ function generate_container()
         CONTAINER_LINT="# hadolint ignore=SC2016"
     fi
 
-    if [[ "${CONTAINER_OS_NAME}" == "alpine" ]]; then
-        CONTAINER_SHELL="ash"
-    else
-        CONTAINER_SHELL="bash"
-    fi
-
-    PACKAGES=$(get-versions -p -c "${REPO_ROOT}/Packages/packages.cfg" -o "${CONTAINER_OS_NAME}" -t "${CONTAINER_OS_VERSION_ALT}" -s "${CONTAINER_SHELL}")
+    PACKAGES=$("${REPO_ROOT}"/Scripts/get-versions.sh -g "${REPO_ROOT}"/Scripts/version-grabber.sh -p -c "${REPO_ROOT}/Packages/packages.cfg" -o "${CONTAINER_OS_NAME}" -t "${CONTAINER_OS_VERSION_ALT}" -s "${CONTAINER_SHELL}")
     if [[ -f "Templates/static-packages.tpl" ]]; then
         STATIC=$(<Templates/static-packages.tpl)
         PACKAGES=$(printf "%s\n%s" "${PACKAGES}" "${STATIC}")
     fi
 
-    cp Dockerfile Dockerfile.bak
+    if [[ -f "Dockerfile" ]]; then
+        cp Dockerfile Dockerfile.bak
+    fi
 
+    touch Dockerfile
     cat >Dockerfile <<EOL
 FROM ${CONTAINER_OS_NAME}:${CONTAINER_OS_VERSION_ALT}
 
@@ -159,6 +160,13 @@ function build_container()
         docker build --pull -t "${LOCAL_CONTAINER_NAME}" .
         echo "${fgGreen}${bold}Build Complete: ${LOCAL_CONTAINER_NAME}${reset}"
     fi
+}
+
+function scan_container()
+{
+    echo "${fgGreen}${bold}Scanning: ${LOCAL_CONTAINER_NAME}${reset}"
+    docker scan "${LOCAL_CONTAINER_NAME}"
+    echo "${fgGreen}${bold}Scan Complete: ${LOCAL_CONTAINER_NAME}${reset}"
 }
 
 function get_image_id()

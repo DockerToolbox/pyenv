@@ -9,7 +9,7 @@ RUN apk update && \
 		libffi-dev=3.3-r2 \
 		openssl-dev=1.1.1k-r0 \
 		readline-dev=8.0.4-r0 \
-		sqlite-dev=3.32.1-r1 \
+		sqlite-dev=3.32.1-r0 \
 		zlib-dev=1.2.11-r3 \
 		&& \
 	apk add --no-cache --virtual \

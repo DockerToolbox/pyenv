@@ -1,19 +1,20 @@
-FROM centos:8
+FROM centos:7
 
 # hadolint ignore=SC2016
 RUN yum makecache && \
 	yum install -y \
 		bzip2-devel-1.0.6 \
-		gcc-8.4.1 \
-		git-2.27.0 \
-		libffi-devel-3.1 \
-		make-4.2.1 \
-		openssl-devel-1.1.1g \
-		patch-2.7.6 \
-		readline-devel-7.0 \
-		sqlite-devel-3.26.0 \
-		tar-1.30 \
-		zlib-devel-1.2.11 \
+		gcc-4.8.5 \
+		git-1.8.3.1 \
+		libffi-devel-3.0.13 \
+		make-3.82 \
+		openssl-devel-1.0.2k \
+		patch-2.7.1 \
+		readline-devel-6.2 \
+		sqlite-devel-3.7.17 \
+		tar-1.26 \
+		zlib-devel-1.2.7 \
+		yum-plugin-remove-with-leaves-1.1.31 \
 		&& \
 	git clone https://github.com/pyenv/pyenv.git ~/.pyenv && \
         echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc && \
@@ -21,8 +22,8 @@ RUN yum makecache && \
 	echo 'eval "$(pyenv init --path)"' >> ~/.bashrc && \
 	yum remove -y \
 		git \
+		--remove-leaves \
 		&& \
-	yum autoremove && \
 	yum clean all && \
 	rm -rf /var/cache/yum
 

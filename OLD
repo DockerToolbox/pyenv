@@ -1,34 +1,37 @@
+<h1 align="center">
+	<a href="https://github.com/WolfSoftware">
+		<img src="https://raw.githubusercontent.com/WolfSoftware/branding/master/images/general/banners/64/black-and-white.png" alt="Wolf Software Logo" />
+	</a>
+	<br>
+	Docker containers with pyenv installed
+</h1>
+
 <p align="center">
-    <a href="https://github.com/DockerToolbox/">
-        <img src="https://cdn.wolfsoftware.com/assets/images/github/organisations/dockertoolbox/black-and-white-circle-256.png" alt="DockerToolbox logo" />
-    </a>
-    <br />
-    <a href="https://github.com/DockerToolbox/pyenv/actions/workflows/pipeline.yml">
-        <img src="https://img.shields.io/github/workflow/status/DockerToolbox/pyenv/pipeline/master?style=for-the-badge" alt="Github Build Status">
-    </a>
-    <a href="https://github.com/DockerToolbox/pyenv/releases/latest">
-        <img src="https://img.shields.io/github/v/release/DockerToolbox/pyenv?color=blue&label=Latest%20Release&style=for-the-badge" alt="Release">
-    </a>
-    <a href="https://github.com/DockerToolbox/pyenv/releases/latest">
-        <img src="https://img.shields.io/github/commits-since/DockerToolbox/pyenv/latest.svg?color=blue&style=for-the-badge" alt="Commits since release">
-    </a>
-    <br />
-    <a href=".github/CODE_OF_CONDUCT.md">
-        <img src="https://img.shields.io/badge/Code%20of%20Conduct-blue?style=for-the-badge" />
-    </a>
-    <a href=".github/CONTRIBUTING.md">
-        <img src="https://img.shields.io/badge/Contributing-blue?style=for-the-badge" />
-    </a>
-    <a href=".github/SECURITY.md">
-        <img src="https://img.shields.io/badge/Report%20Security%20Concern-blue?style=for-the-badge" />
-    </a>
-    <a href="https://github.com/DockerToolbox/pyenv/issues">
-        <img src="https://img.shields.io/badge/Get%20Support-blue?style=for-the-badge" />
-    </a>
-    <br />
-    <a href="https://wolfsoftware.com/">
-        <img src="https://img.shields.io/badge/Created%20by%20Wolf%20Software-blue?style=for-the-badge" />
-    </a>
+	<a href="https://travis-ci.com/DockerToolbox/pyenv">
+		<img src="https://img.shields.io/travis/com/DockerToolbox/pyenv/master?style=for-the-badge&logo=travis" alt="Build Status">
+	</a>
+	<a href="https://github.com/DockerToolbox/pyenv/releases/latest">
+		<img src="https://img.shields.io/github/v/release/DockerToolbox/pyenv?color=blue&style=for-the-badge&logo=github&logoColor=white&label=Latest%20Release" alt="Release">
+	</a>
+	<a href="https://github.com/DockerToolbox/pyenv/releases/latest">
+		<img src="https://img.shields.io/github/commits-since/DockerToolbox/pyenv/latest.svg?color=blue&style=for-the-badge&logo=github&logoColor=white" alt="Commits since release">
+	</a>
+	<a href="LICENSE.md">
+		<img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" alt="Software License">
+	</a>
+	<br>
+	<a href=".github/CODE_OF_CONDUCT.md">
+		<img src="https://img.shields.io/badge/Code%20of%20Conduct-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" />
+	</a>
+	<a href=".github/CONTRIBUTING.md">
+		<img src="https://img.shields.io/badge/Contributing-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" />
+	</a>
+	<a href=".github/SECURITY.md">
+		<img src="https://img.shields.io/badge/Report%20Security%20Concern-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" />
+	</a>
+	<a href=".github/SUPPORT.md">
+		<img src="https://img.shields.io/badge/Get%20Support-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" />
+	</a>
 </p>
 
 ## Overview
@@ -49,13 +52,15 @@ We try to offer as many operating system flavours as possible, but we only use c
 | [Centos 8](Dockerfiles/centos/8/Dockerfile)                         | [wolfsoftwareltd/pyenv-centos](https://hub.docker.com/r/wolfsoftwareltd/pyenv-centos)           | 8, latest                   |
 | [Debian 9 (Stretch)](Dockerfiles/debian/9/Dockerfile)               | [wolfsoftwareltd/pyenv-debian](https://hub.docker.com/r/wolfsoftwareltd/pyenv-debian)           | 9, stretch                  |
 | [Debian 9 (Stretch Slim)](Dockerfiles/debian/9-slim/Dockerfile)     | [wolfsoftwareltd/pyenv-debian](https://hub.docker.com/r/wolfsoftwareltd/pyenv-debian)           | 9-slim, stretch-slim        |
-| [Debian 10 (Buster)](Dockerfiles/debian/10/Dockerfile)              | [wolfsoftwareltd/pyenv-debian](https://hub.docker.com/r/wolfsoftwareltd/pyenv-debian)           | 10, buster                  |
+| [Debian 10 (Buster)](Dockerfiles/debian/10/Dockerfile)              | [wolfsoftwareltd/pyenv-debian](https://hub.docker.com/r/wolfsoftwareltd/pyenv-debian)           | 10, buster, latest          |
 | [Debian 10 (Buster Slim)](Dockerfiles/debian/10-slim/Dockerfile)    | [wolfsoftwareltd/pyenv-debian](https://hub.docker.com/r/wolfsoftwareltd/pyenv-debian)           | 10-slim, buster-slim        |
-| [Debian 11 (Bullseye)](Dockerfiles/debian/11/Dockerfile)            | [wolfsoftwareltd/pyenv-centos](https://hub.docker.com/r/wolfsoftwareltd/pyenv-centos)           | 11, bullseye, latest        |
+| [Debian 11 (Bullseye)](Dockerfiles/debian/11/Dockerfile)            | [wolfsoftwareltd/pyenv-centos](https://hub.docker.com/r/wolfsoftwareltd/pyenv-centos)           | 11, bullseye                |
 | [Debian 11 (Bullseye Slim)](Dockerfiles/debian/11-slim/Dockerfile)  | [wolfsoftwareltd/pyenv-debian](https://hub.docker.com/r/wolfsoftwareltd/pyenv-debian)           | 11-slim, bullseye-slim      |
 | [Ubuntu 16.04 (Xenial Xerus)](Dockerfiles/ubuntu/16.04/Dockerfile)  | [wolfsoftwareltd/pyenv-ubuntu](https://hub.docker.com/r/wolfsoftwareltd/pyenv-ubuntu)           | 16.04, xenial               |
 | [Ubuntu 18.04 (Bionic Beaver)](Dockerfiles/ubuntu/18.04/Dockerfile) | [wolfsoftwareltd/pyenv-ubuntu](https://hub.docker.com/r/wolfsoftwareltd/pyenv-ubuntu)           | 18.04, bionic               |
 | [Ubuntu 20.04 (Focal Fossa)](Dockerfiles/ubuntu/20.04/Dockerfile)   | [wolfsoftwareltd/pyenv-ubuntu](https://hub.docker.com/r/wolfsoftwareltd/pyenv-ubuntu)           | 20.04, focal, latest        |
+
+> Debian bullseye isn't technically Debian 11 (yet)
 
 ## Naming convention
 
@@ -71,35 +76,18 @@ We try to offer as many operating system flavours as possible, but we only use c
   wolfsoftwareltd/pyenv-<os>:<version> e.g. wolfsoftwareltd/pyenv-debian:10
 ```
 
-## Development
+## Contributors
 
-### Generate Dockerfiles
+<p>
+	<a href="https://github.com/TGWolf">
+		<img src="https://img.shields.io/badge/Wolf-black?style=for-the-badge" />
+	</a>
+</p>
 
-This can be done from any level of the directory tree and is recursive.
+## Show Support
 
-```
-./manange-all.sh generate
-```
-
-### Build Containers
-
-This can be done from any level of the directory tree and is recursive.
-
-```
-./manange-all.sh build [clean]
-```
-
-### Publish Containers
-
-This can be done from any level of the directory tree and is recursive.
-
-```
-./manange-all.sh publish
-```
-
-If you want to publish the containers you will need to update the [utils.sh](Scripts/utils.sh) script and change the following lines.
-
-```
-DOCKER_HUB_ORG='wolfsoftwareltd'
-CONTAINER_PREFIX='pyenv'
-```
+<p>
+	<a href="https://ko-fi.com/wolfsoftware">
+		<img src="https://img.shields.io/badge/Ko%20Fi-blue?style=for-the-badge&logo=ko-fi&logoColor=white" />
+	</a>
+</p>
