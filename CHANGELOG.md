@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DockerToolbox/pyenv/compare/v0.1.2...HEAD)
 
-- rebrand [`[head]`](https://github.com/DockerToolbox/pyenv/commit/)
+- remove alpine:3.10 and add alpine:3.14 [`[head]`](https://github.com/DockerToolbox/pyenv/commit/)
+
+- rebrand [`[1038a62]`](https://github.com/DockerToolbox/pyenv/commit/1038a62d290d5e0be439c87a7393b04c1328a7fc)
 
 ### [v0.1.1](https://github.com/DockerToolbox/pyenv/compare/v0.1.0...v0.1.1)
 
