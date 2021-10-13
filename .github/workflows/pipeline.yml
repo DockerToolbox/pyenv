@@ -64,7 +64,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ '9', '9-slim', '10', '10-slim', '11', '11-slim' ]
+        version: [ '9', '9-slim', '10', '10-slim', '11', '11-slim', '12', '12-slim' ]
     name: Build on Debian ${{ matrix.version }}
     steps:
       - uses: actions/checkout@v2

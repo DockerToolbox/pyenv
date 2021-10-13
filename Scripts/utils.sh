@@ -39,8 +39,14 @@ function setup()
             11-slim)
                 CONTAINER_OS_VERSION_ALT="bullseye-slim"
                 ;;
+            12)
+                CONTAINER_OS_VERSION_ALT="bookworm"
+                ;;
+            12-slim)
+                CONTAINER_OS_VERSION_ALT="bookworm-slim"
+                ;;
             *)
-                echo "${fgRed}${bold}Unknown debian version ${CONTAINER_OS_VERSION_RAW} aborting${reset}"
+                echo "${fgRed}${bold}Unknown debian version ${CONTAINER_OS_VERSION_RAW} - update utils.sh - aborting${reset}"
                 exit
         esac
     else
