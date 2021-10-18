@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/DockerToolbox/pyenv/compare/v0.1.2...HEAD)
 
-- update [`[head]`](https://github.com/DockerToolbox/pyenv/commit/)
+- Move to anyenv [`[head]`](https://github.com/DockerToolbox/pyenv/commit/)
+
+- update [`[e32f4ed]`](https://github.com/DockerToolbox/pyenv/commit/e32f4ed824183e220396f14cd42eceff4df4f536)
 
 - update [`[135c6c2]`](https://github.com/DockerToolbox/pyenv/commit/135c6c229a43741a05095b6b803586c072acf119)
 
